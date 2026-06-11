@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cairo:wght@300;400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-sarmad-bg: #F4EBE0;
+  --color-sarmad-gold: #44352D;
+  --color-sarmad-gold-muted: rgba(68, 53, 45, 0.4);
+  --color-sarmad-accent: #E8DDCE;
+  --color-sarmad-text: #44352D;
+  --color-sarmad-text-muted: #796D65;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-arabic: "Cairo", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-sarmad-bg);
+  color: var(--color-sarmad-text);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* For glassmorphism effects */
+.glass {
+  background: rgba(244, 235, 224, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(68, 53, 45, 0.1);
+}
+
+.gold-gradient-text {
+  color: #44352D;
+}
+
+/* Smoke animation components */
+@keyframes drift {
+  0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.2; }
+  50% { transform: translateY(-5vh) scale(1.1) rotate(5deg); opacity: 0.3; }
+  100% { transform: translateY(-10vh) scale(1) rotate(0deg); opacity: 0; }
+}
+
+.smoke-particle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
+  animation: drift 15s infinite linear;
+}
